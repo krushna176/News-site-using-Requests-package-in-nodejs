@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imdb Lite</title>
+</head>
+<body>
+    <form method="post">
+        <input type="text" placeholder="serach movie" name="Movie">
+        <input type="submit" value="Search">
+    </form>
+    <%if(mName!= null){%>
+        
+       <%  for(var i=0; i < objdata.articles.length;i++){ %>
+            <a href="/contact/<%-i%>">
+    <div class="box">
+        <img src="<%=objdata.articles[i].urlToImage %>">
+        <h3><%=objdata.articles[i].source.name%></h3>
+        <h3><%=objdata.articles[i].description%></h3>
+        <h3><%=objdata.articles[i].title%></h3>
+       
+    </div>
+</a>
+        <%}%>
+        <% } else if(errorr){ %>
+            
+            <h1>Connection lost</h1>
+        <% } else if(objdata.message){ %>
+            
+            <h1><%=objdata.message%></h1>
+        <%}else{%>
+                <h1>Welcome</h1>
+        <%}%>
+</body>
+</html>
