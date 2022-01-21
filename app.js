@@ -75,4 +75,18 @@ app.get('/contact/:id',(req,res)=>{
   res.render('content',{ID,objdata});
 
 })
+
+app.get('/india',(req,res)=>{
+  const url_api=`https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=4b16fffb800646f8a245cce97d29c4aa`;
+    requests(url_api)
+    
+    .on('data',  (chunk)=> {
+        objdata= JSON.parse(chunk);
+        res.render('India',{objdata});
+    })
+    .on('end',  (err)=> {
+      errorr=err;
+      if (errorr) console.log('connection closed due to errors', errorr);
+    })
+})
 app.listen(3000);

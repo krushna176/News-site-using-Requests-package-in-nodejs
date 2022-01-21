@@ -4,13 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imdb Lite</title>
+    <title>News</title>
 </head>
 <body>
-    <form method="post">
-        <input type="text" placeholder="serach movie" name="Movie">
-        <input type="submit" value="Search">
-    </form>
+    <header>
+        <ul>
+            <li><a href="/India"> India</a></li>
+        </ul>
+        <form method="post">
+            <input type="text" placeholder="serach movie" name="Movie">
+            <input type="submit" value="Search">
+        </form>
+    </header>
+    
     <%if(mName!= null){%>
         
        <%  for(var i=0; i < objdata.articles.length;i++){ %>
